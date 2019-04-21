@@ -8,7 +8,7 @@ checkout_tag=false
 [ "$(echo $VERSION | cut -c1)" -ge 0 ] 2>/dev/null && VERSION="v$VERSION" && checkout_tag=true
 
 # caddy
-git clone https://github.com/mholt/caddy -b "$VERSION" /go/src/github.com/mholt/caddy \
+git clone https://github.com/mholt/caddy --depth 1 -b "$VERSION" /go/src/github.com/mholt/caddy \
     && cd /go/src/github.com/mholt/caddy \
     && $checkout_tag && git checkout -b "$VERSION"
 
